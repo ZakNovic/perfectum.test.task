@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ca2e92aa-5fee-4faa-bb7f-63eb889f81f4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="ProjectId" id="1e7kXN6fIUPzS78kKso71igh2Rq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\server\OSPanel\domains\codeigniter\application\views\comments" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca2e92aa-5fee-4faa-bb7f-63eb889f81f4" name="Default Changelist" comment="" />
+      <created>1593680057877</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593680057877</updated>
+      <workItem from="1593680059223" duration="5052000" />
+      <workItem from="1593710656349" duration="33148000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="568" y="226" key="NewPhpClassDialog" timestamp="1593681217192">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="568" y="226" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593681217192" />
+    <state x="728" y="405" key="NewPhpFileDialog" timestamp="1593713691632">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="728" y="405" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593713691632" />
+    <state x="221" y="0" key="SettingsEditor" timestamp="1593742869328">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="221" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593742869328" />
+    <state x="506" y="82" width="908" height="876" key="find.popup" timestamp="1593714655073">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="506" y="82" width="908" height="876" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593714655073" />
+  </component>
+</project>
