@@ -1,0 +1,60 @@
+Запросы при отправке сообщений от Ч1 к Ч2
+1) если сообщение первое создается автоматически сайт, если пользователь создает групповой чат, тогда указівает имя чата по желанию:
+
+INSERT INTO `chat` (`name`, `create_user_id`) VALUES ('Posts1', '2');
+
+-создание чата без имени:
+
+INSERT INTO `chat` (`create_user_id`) VALUES ('2');
+
+2) Сохранение сообщения:
+
+INSERT INTO `messages` (`chat_id`, `user_id`, `content`, `date_create`) VALUES ('1', '1', 'Добрый день!', 'NOW()');
+
+3) Добавление связи между чатом и пользователями: (статус -отображение сообщения или если пользователь удаляет у себя, тогда у него статус 0)
+
+INSERT INTO `chat_has_users` (`chat_id`, `user_id`, `status`) VALUES ('1', '1', '1');
+INSERT INTO `chat_has_users` (`chat_id`, `user_id`, `status`) VALUES ('1', '2', '1');
+
+Запрос на получение истории переписки между Ч1 и Ч2:
+
+SELECT content, user.username
+FROM messages
+LEFT JOIN user ON user.id = messages.user_id
+WHERE chat_id = 1
+
+запрос на получение списка всех диалогов, в которых участвует Ч1, с
+сортировкой по последнему полученному сообщению (аналог как список чатов в
+любом мессенджере) и с отображением участников диалога:
+
+SELECT user.username, chat.name, messages.date_create
+FROM chat
+LEFT JOIN chat_has_users ON chat_has_users.chat_id = chat.id
+LEFT JOIN messages ON messages.user_id = chat_has_users.user_id
+LEFT JOIN user ON user.id = chat_has_users.user_id
+WHERE chat.id IN (SELECT chat_has_users.chat_id FROM chat_has_users WHERE chat_has_users.user_id = 1)
+ORDER BY messages.date_create DESC
+
+запрос на удаление одного сообщения в истории переписки: 
+(тут идея такая,- пользователь сможет выбрать удалить у себя или у всех свое сообщение (если он создатель сообщения) 
+если пользователь удаляет чужое сообщение, он может удалить только у себя, соответственно оно не удалиться у всех, а только у него не будет выводиться
+для такого функционала предназначена таблица связи и установки статусов message_has_users, в которой фиксируется связь каждого сообщения с юзером, и соответственно статусы: 
+отправлено, прочитано, удалено (ну и конечно можно добавлять другие по функционалу), статус принимает значения 1(true) или 0(false)
+
+1) удаление сообщения создателем у всех (ID которого есть в таблице messages -> user_id):
+DELETE FROM messages WHERE id= 7;
+DELETE FROM message_has_users WHERE message_id = 7;
+
+2) удаление сообщения любым пользователем только у себя:
+UPDATE message_has_users SET del = 1 WHERE user_id = 2;
+
+запрос на удаление всей истории переписки с пользователем: (тут такая же идея как и с конкретным сообщением)
+1) удаление чата создателем у всех (ID которого есть в таблице chat -> create_user_id):
+DELETE FROM chat WHERE id = 5;
+DELETE FROM chat_has_users WHERE chat_id = 5;
+DELETE FROM messages WHERE chat_id = 5;
+DELETE FROM message_has_users WHERE chat_id = 5;
+
+2) удаление чата(переписки) любым пользователем только у себя:
+UPDATE chat_has_users SET del = 1 WHERE user_id = 2;
+
